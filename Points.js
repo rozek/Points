@@ -4,10 +4,7 @@
  * http://rich-harris.github.io/Points
  * Copyright (c) 2013 Rich Harris; Released under the MIT License */
 
-
-
 (function () {
-
 	'use strict';
 
 	var activePointers,
@@ -24,7 +21,6 @@
 		createTouchProxyEvent,
 		buttonsMap,
 		pointerEventProperties;
-
 
 	// Pointer events supported? Great, nothing to do, let's go home
 	if ( window.onpointerdown !== undefined ) {
@@ -83,10 +79,8 @@
 		return pointerEvent;
 	};
 
-
 	// add pointerEnabled property to navigator
 	navigator.pointerEnabled = true;
-
 
 	// If we're in IE10, these events are already supported, except prefixed
 	if ( window.onmspointerdown !== undefined ) {
@@ -107,7 +101,6 @@
 					}
 				}, true );
 			}
-
 			else {
 				window.addEventListener( prefixed, function ( originalEvent ) {
 					var unprefixedEvent = createEvent( unprefixed, originalEvent, originalEvent, false );
@@ -121,7 +114,6 @@
 		// Nothing more to do.
 		return;
 	}
-
 
 	// https://dvcs.w3.org/hg/pointerevents/raw-file/tip/pointerEvents.html#dfn-chorded-buttons
 	buttonsMap = {
@@ -208,8 +200,6 @@
 		};
 	}
 
-
-
 	setUpMouseEvent = function ( type ) {
 		if ( type === 'over' || type === 'out' ) {
 			window.addEventListener( 'mouse' + type, function ( originalEvent ) {
@@ -246,10 +236,6 @@
 	[ 'down', 'up', 'over', 'out', 'move' ].forEach( function ( eventType ) {
 		setUpMouseEvent( eventType );
 	});
-
-
-
-
 
 	// Touch events:
 	if ( window.ontouchstart !== undefined ) {
@@ -449,12 +435,10 @@
 		});
 	}
 
-
 	// Single preventDefault function - no point recreating it over and over
 	function preventDefault () {
 		this.originalEvent.preventDefault();
 	}
 
 	// TODO stopPropagation?
-
 }());
