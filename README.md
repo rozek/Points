@@ -14,7 +14,7 @@ A [pointer events][1] polyfill, allowing you to listen to the following events a
 
 The idea is to abstract away the differences between mouse and touch (and pen) events, to reduce the developer effort required to support multiple input types. Currently, without a polyfill, only IE10 supports these events (in prefixed form), but it looks as though they will gain wider adoption.
 
-> **Important note: this fork is practically identical to [the original repository](https://github.com/Rich-Harris/Points) made by [Rich Harris](https://github.com/Rich-Harris) and has only been created in order to publish "Points" as an npm module**
+> **Important note: this fork is practically identical to [the original repository](https://github.com/Rich-Harris/Points) and has only been created in order to publish "Points" as an npm module - all credits still go to [Rich Harris](https://github.com/Rich-Harris)**
 
 Usage
 -----
